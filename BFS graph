@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+class Graph {
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+
+    Graph(int v) {
+        for (int i = 0; i < v; i++) {
+            list.add(new ArrayList<Integer>());
+        }
+    }
+
+    public void push(int u, int v) {
+        list.get(u).add(v);
+        list.get(v).add(u);
+    }
+
+    public void bfs(int start) {
+        int l = list.size();
+        boolean[] visited = new boolean[l];
+        Queue<Integer> queue = new LinkedList<>();
+
+        // Mark the start node as visited and enqueue it
+        visited[start] = true;
+        queue.add(start);
+
+        while (!queue.isEmpty()) {
+            int v = queue.poll();  // Dequeue a vertex from the queue
+            System.out.println(v + " ");
+
+            // Get all adjacent vertices of the dequeued vertex
+            // If an adjacent vertex has not been visited, mark it as visited and enqueue it
+            for (int i = 0; i < list.get(v).size(); i++) {
+                int k = list.get(v).get(i);
+                if (!visited[k]) {
+                    visited[k] = true;
+                    queue.add(k);
+                }
+            }
+        }
+    }
+
+    public void display() {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print("Vertices:" + i + " ");
+            for (int j = 0; j < list.get(i).size(); j++) {
+                System.out.print(list.get(i).get(j) + " ");
+            }
+            System.out.println(" ");
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        Graph g = new Graph(5);
+        while (true) {
+            int a = s.nextInt();
+            int b = s.nextInt();
+            if (a == -1 || b == -1)
+                break;
+            g.push(a, b);
+        }
+        g.bfs(3);  // Start BFS from vertex 3
+    }
+}
