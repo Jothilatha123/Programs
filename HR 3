@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> list1 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        System.out.println("Enter elements of the first ArrayList:");
+        int size1 = scanner.nextInt();
+        for (int i = 0; i < size1; i++) {
+            list1.add(scanner.next());
+        }
+        System.out.println("Enter elements of the second ArrayList:");
+        int size2 = scanner.nextInt();
+        for (int i = 0; i < size2; i++) {
+            list2.add(scanner.next());
+        }
+        if (list1.equals(list2)) {
+            System.out.println("The two ArrayLists are equal.");
+        } else
+        {
+            System.out.println("The two ArrayLists are not equal.");
+        }
+
+        scanner.close();
+    }
+}
