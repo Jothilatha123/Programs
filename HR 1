@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the ArrayList: ");
+        int size = scanner.nextInt();
+        ArrayList<String> list = new ArrayList<>();
+        System.out.println("Enter " + size + " elements:");
+        for (int i = 0; i < size; i++) {
+            list.add(scanner.next());
+        }
+        System.out.println("Original ArrayList: " + list);
+        Collections.reverse(list);
+        System.out.println("Reversed ArrayList: " + list);
+
+        scanner.close();
+    }
+}
