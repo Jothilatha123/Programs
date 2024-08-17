@@ -1,0 +1,11 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+class Example {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter frenchFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy", Locale.FRENCH);
+        String formattedDate = today.format(frenchFormatter);
+        System.out.println("Date in French: " + formattedDate);
+    }
+}
