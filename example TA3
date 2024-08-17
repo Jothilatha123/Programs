@@ -1,0 +1,12 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+class Example {
+    public static void main(String[] args) {
+        LocalDate startDate = LocalDate.of(2024, 8, 16);
+        System.out.println("Start Date: " + startDate);
+        LocalDate endDate = LocalDate.of(2024, 9, 5);
+        System.out.println("End Date: " + endDate);
+        long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+        System.out.println("Number of days between: " + daysBetween);
+    }
+}
