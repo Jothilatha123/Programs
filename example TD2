@@ -1,0 +1,9 @@
+import java.time.LocalDate;
+class Example {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        System.out.println("Today's date: " + today);
+        LocalDate dateAfter10Days = today.plusDays(10);
+        System.out.println("Date 10 days from today: " + dateAfter10Days);
+    }
+}
