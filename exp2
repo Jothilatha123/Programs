@@ -1,0 +1,22 @@
+import java.util.LinkedList;
+import java.util.HashSet;
+class RemoveDuplicatesLinkedList {
+
+    public static void removeDuplicates(LinkedList<Integer> list) {
+        HashSet<Integer> seen = new HashSet<>();
+        list.removeIf(element -> !seen.add(element));
+    }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(2);
+        list.add(4);
+        list.add(3);
+
+        removeDuplicates(list);
+        System.out.println(list); // Output: [1, 2, 3, 4]
+    }
+}
