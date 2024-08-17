@@ -1,0 +1,17 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate1 = now.format(format1);
+        System.out.println("Date in DD/MM/YYYY format: " + formattedDate1);
+        DateTimeFormatter format2 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+        String formattedDate2 = now.format(format2);
+        System.out.println("Date in 'Month DD, YYYY' format: " + formattedDate2);
+        DateTimeFormatter format3 = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+        String formattedDate3 = now.format(format3);
+        System.out.println("Date in 'YYYY-MM-DDTHH:MM' format: " + formattedDate3);
+    }
+}
