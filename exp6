@@ -1,0 +1,19 @@
+import java.util.TreeSet;
+class RemoveElementsTreeSet {
+
+    public static void removeElementsLessThan(TreeSet<Integer> set, int threshold) {
+        set.headSet(threshold).clear();
+    }
+
+    public static void main(String[] args) {
+        TreeSet<Integer> treeSet = new TreeSet<>();
+        treeSet.add(1);
+        treeSet.add(2);
+        treeSet.add(3);
+        treeSet.add(4);
+        treeSet.add(5);
+
+        removeElementsLessThan(treeSet, 3);
+        System.out.println(treeSet); // Output: [3, 4, 5]
+    }
+}
